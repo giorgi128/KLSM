@@ -32,7 +32,7 @@
 #endif
 
 #include "pqs/cheap.h"
-//#include "pqs/cppcapq.h"
+#include "pqs/cppcapq.h"
 #include "pqs/globallock.h"
 #include "pqs/linden.h"
 #include "pqs/multiq.h"
@@ -185,7 +185,7 @@ usage()
 {
     fprintf(stderr,
             "USAGE: random [-c] [-i size] [-k keys] [-p nthreads] [-s seed] [-w workload] pq\n"
-            "       -b: beta used for multiqueue
+            "       -b: beta used for multiqueue"
             "       -c: Print performance counters (default = %d)\n"
             "       -i: Specifies the initial size of the priority queue (default = %d)\n"
             "       -k: Specifies the key generation type, one of %d: uniform, %d: ascending, %d: descending,"
@@ -798,7 +798,7 @@ static double
 safe_parse_double_arg(const char *arg)
 {
     errno = 0;
-    const double i = strtod(arg, NULL, 0);
+    const double i = strtod(arg, NULL);
     if (errno != 0) {
         usage();
     }
@@ -842,7 +842,7 @@ main(int argc,
             settings.workload = safe_parse_int_arg(optarg);
             break;
         case 'b':
-            settinss.beta = safe_parse_double_arg(optarg);
+            settings.beta = safe_parse_double_arg(optarg);
         default:
             usage();
         }

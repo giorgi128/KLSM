@@ -1,1 +1,0 @@
-/usr/bin/c++   -O3 -DNDEBUG    CMakeFiles/versioned-array-ptr-test.dir/versioned_array_ptr.cpp.o  -o versioned-array-ptr-test -rdynamic ../../gtest/libgtest.a ../../src/util/libthread_local_ptr.a -lpthread 

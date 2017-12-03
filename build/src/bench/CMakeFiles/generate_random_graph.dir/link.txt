@@ -1,1 +1,0 @@
-/usr/bin/c++   -O3 -DNDEBUG    CMakeFiles/generate_random_graph.dir/generate_random_graph.cpp.o  -o generate_random_graph -rdynamic 

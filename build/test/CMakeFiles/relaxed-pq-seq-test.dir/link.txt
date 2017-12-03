@@ -1,1 +1,0 @@
-/usr/bin/c++   -O3 -DNDEBUG    CMakeFiles/relaxed-pq-seq-test.dir/relaxed_pq_seq.cpp.o  -o relaxed-pq-seq-test -rdynamic ../gtest/libgtest.a ../src/util/libthread_local_ptr.a -lpthread 

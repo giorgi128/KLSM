@@ -104,7 +104,7 @@ CFLAGS += -D_GNU_SOURCE
 CFLAGS += -DLOCKFREE
 CFLAGS += -Wall
 CFLAGS += -fno-strict-aliasing
-CFLAGS += -I$(ROOT)/atomic_ops -I$(ROOT)/include
+CFLAGS += -I$(LIBAO_INC) -I$(ROOT)/include
 
 #LDFLAGS += -L$(LIBAO)/lib -latomic_ops 
 LDFLAGS += -lpthread -lrt -lm

@@ -29,7 +29,7 @@
 
 #include "dist_lsm/dist_lsm.h"
 #include "k_lsm/k_lsm.h"
-//#include "pqs/cppcapq.h"
+#include "pqs/cppcapq.h"
 #include "pqs/globallock.h"
 #include "pqs/multiq.h"
 #include "pqs/linden.h"
@@ -52,7 +52,7 @@ static std::string DEFAULT_OUTPUT_FILE = "out.txt";
 #define PQ_KLSM        "klsm"
 #define PQ_KLSM16      "klsm16"
 #define PQ_KLSM128     "klsm128"
-#define PQ_KLSM256     "klsm256"f
+#define PQ_KLSM256     "klsm256"
 #define PQ_KLSM512     "klsm512"
 #define PQ_KLSM1024    "klsm1024"
 #define PQ_KLSM2048    "klsm2048"
@@ -134,7 +134,7 @@ usage()
             "       -n: Number of threads (default = %d)\n"
             "       -w: Generate random weights between 0 and end_of_range\n"
             "       -s: The random number generator seed (default = %d)\n"
-            "       -b: beta needed for multiqueue
+            "       -b: beta needed for multiqueue"
             "       -o: Output file name (default = %s)\n"
             "       pq: The data structure to use as the backing priority queue\n"
             "           (one of '%s', '%s', '%s', '%s', '%s', '%s',\n"
