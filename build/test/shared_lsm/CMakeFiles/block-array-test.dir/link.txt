@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -DNDEBUG    CMakeFiles/block-array-test.dir/block_array.cpp.o  -o block-array-test -rdynamic ../../gtest/libgtest.a ../../src/util/libthread_local_ptr.a -lpthread 

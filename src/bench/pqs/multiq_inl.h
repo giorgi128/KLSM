@@ -18,7 +18,7 @@
  */
 
 static thread_local kpq::xorshf96 local_rng;
-static thread_local isFirstDelMin = 1;
+static thread_local bool isFirstDelMin = 1;
 static thread_local std::mt19937 rng;
 static thread_local std::uniform_real_distribution<float> rnd_f(0.0, 1.0);
 
@@ -51,7 +51,7 @@ multiq<K, V, C>::delete_min(K &key, V &value)
     size_t i, j;
     int retry_count = 0;
     while (true) {
-        if (f(rng) <= m_beta) //with probability m_beta
+        if (rnd_f(rng) <= m_beta) //with probability m_beta
         {
             /*pick two queues at random and lock the one with a minimum value on top*/
             do {

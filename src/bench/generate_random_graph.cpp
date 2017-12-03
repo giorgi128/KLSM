@@ -139,7 +139,7 @@ main(int argc,
                                      num_edges);
     std::cout << "# Nodes: " << number_of_nodes << " Edges: " << num_edges << std::endl;
     // Print the generated graph to stdout
-    for (size_t i; i < number_of_nodes ; i++) {
+    for (size_t i = 0; i < number_of_nodes ; i++) {
         for (size_t k = 0; k < nodes[i].num_edges; k++) {
             std::cout << i << "\t" << nodes[i].edges[k].target << std::endl;
         }

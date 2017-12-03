@@ -104,7 +104,7 @@ CFLAGS += -D_GNU_SOURCE
 CFLAGS += -DLOCKFREE
 CFLAGS += -Wall
 CFLAGS += -fno-strict-aliasing
-CFLAGS += -I$(LIBAO_INC) -I$(ROOT)/include
+CFLAGS += -I$(ROOT)/atomic_ops -I$(ROOT)/include
 
 #LDFLAGS += -L$(LIBAO)/lib -latomic_ops 
 LDFLAGS += -lpthread -lrt -lm
@@ -125,7 +125,7 @@ measurements.o:
 ssalloc.o:
 	$(CC) $(CFLAGS) -c -o $(BUILDIR)/ssalloc.o ssalloc.c
 
-skiplist.o:
+skiplist.o: 
 	$(CC) $(CFLAGS) -c -o $(BUILDIR)/skiplist.o skiplist.c
 
 fraser.o: skiplist.h 

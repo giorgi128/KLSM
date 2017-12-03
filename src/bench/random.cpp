@@ -32,7 +32,7 @@
 #endif
 
 #include "pqs/cheap.h"
-#include "pqs/cppcapq.h"
+//#include "pqs/cppcapq.h"
 #include "pqs/globallock.h"
 #include "pqs/linden.h"
 #include "pqs/multiq.h"

@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -DNDEBUG    CMakeFiles/pq-seq-test.dir/pq_seq.cpp.o  -o pq-seq-test -rdynamic ../gtest/libgtest.a ../src/bench/pqs/libskip_queue.a ../src/bench/pqs/libsequence_heap.a ../src/sequential_lsm/libsequential_lsm.a ../src/util/libthread_local_ptr.a -lpthread 

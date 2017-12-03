@@ -1,0 +1,2 @@
+gcc-ar cr libcapq.a  CMakeFiles/capq.dir/__/__/__/lib/capq/capq.c.o CMakeFiles/capq.dir/__/__/__/lib/capq/fat_skiplist.c.o CMakeFiles/capq.dir/__/__/__/lib/capq/qdlocksrc/locks/qd_lock.c.o CMakeFiles/capq.dir/__/__/__/lib/capq/qdlocksrc/locks/tatas_lock.c.o CMakeFiles/capq.dir/__/__/__/lib/capq/gc/gc.c.o CMakeFiles/capq.dir/__/__/__/lib/capq/gc/ptst.c.o
+gcc-ranlib libcapq.a

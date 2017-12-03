@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -DNDEBUG    CMakeFiles/mm-test.dir/mm.cpp.o  -o mm-test -rdynamic ../../gtest/libgtest.a -lpthread 

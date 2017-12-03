@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -DNDEBUG    CMakeFiles/lockfree-vector-test.dir/lockfree_vector.cpp.o  -o lockfree-vector-test -rdynamic ../../gtest/libgtest.a ../../src/util/libthread_local_ptr.a -lpthread 

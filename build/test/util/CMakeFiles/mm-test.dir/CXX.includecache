@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/util/mm.h
+cstddef
+-
+
+/home/giorgi128/KLSM/test/util/mm.cpp
+gtest/gtest.h
+-
+util/mm.h
+/home/giorgi128/KLSM/test/util/util/mm.h
+

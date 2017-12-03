@@ -35,6 +35,7 @@ constexpr int DEFAULT_NTHREADS   = 1;
 constexpr double DEFAULT_EDGE_P  = 0.5;
 constexpr int DEFAULT_RELAXATION = 256;
 constexpr int DEFAULT_SEED       = 0;
+constexpr double DEFAULT_BETA = 1.0;
 
 #define PQ_DLSM       "dlsm"
 #define PQ_GLOBALLOCK "globallock"
@@ -52,6 +53,7 @@ struct settings {
     double edge_probability;
     int seed;
     std::string type;
+    double beta;
 };
 
 struct edge_t {
@@ -279,10 +281,10 @@ main(int argc,
      char **argv)
 {
     int ret = 0;
-    struct settings s = { DEFAULT_NNODES, DEFAULT_NTHREADS, DEFAULT_EDGE_P, DEFAULT_SEED, ""};
+    struct settings s = { DEFAULT_NNODES, DEFAULT_NTHREADS, DEFAULT_EDGE_P, DEFAULT_SEED, "", DEFAULT_BETA};
 
     int opt;
-    while ((opt = getopt(argc, argv, "m:n:p:s:")) != -1) {
+    while ((opt = getopt(argc, argv, "m:n:p:s:b:")) != -1) {
         switch (opt) {
         case 'm':
             errno = 0;
@@ -305,6 +307,13 @@ main(int argc,
                 usage();
             }
             break;
+	case 'b':
+	   errno = 0;
+	   s.beta = strtod(optarg, NULL);
+	   if (errno != 0) {
+	      usage();
+	    }
+	   break;
         case 's':
             errno = 0;
             s.seed = strtol(optarg, NULL, 0);
@@ -345,7 +354,7 @@ main(int argc,
         kpqbench::GlobalLock<uint32_t, task_t *> pq;
         ret = bench(&pq, s);
     } else if (s.type == PQ_MULTIQ) {
-        kpqbench::multiq<uint32_t, task_t *> pq(s.num_threads);
+      kpqbench::multiq<uint32_t, task_t *> pq(s.num_threads, s.beta);
         ret = bench(&pq, s);
     } else {
         usage();
